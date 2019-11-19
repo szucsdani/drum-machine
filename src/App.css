@@ -16,7 +16,34 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.App-box {
+  height: 300px;
 
+  border: 15px solid green;
+  margin-top: 300px;
+  padding: 50px;
+  flex-grow: 5;
+  flex-shrink: 5;
+}
 .App-link {
   color: #09d3ac;
+}
+.Flex-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lefty {
+  border: 5px solid blue;
+  height: 300px;
+  margin-top: 300px;
+  flex-grow: 3;
+  flex-shrink: 1;
+}
+.righty {
+  border: 5px solid blue;
+  height: 300px;
+  margin-top: 300px;
+  flex-grow: 3;
+  flex-shrink: 1;
 }
