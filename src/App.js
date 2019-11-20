@@ -1,21 +1,69 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import { DrumPadButton } from "./DrumPadButton";
+
+const samples = [
+  {
+    letter: "q",
+    sourceHihat: "./samples/closedhihat.wav",
+    sourceSnare: "./samples/eclap1.wav"
+  },
+  {
+    letter: "w",
+    sourceHihat: "./samples/halfhihat.wav",
+    sourceSnare: "./samples/eclap2.wav"
+  },
+  {
+    letter: "e",
+    sourceHihat: "./samples/openhihat.wav",
+    sourceSnare: "./samples/eclap3.wav"
+  },
+  {
+    letter: "a",
+    sourceHihat: "./samples/snare.wav",
+    sourceSnare: "./samples/esnare1.wav"
+  },
+  {
+    letter: "s",
+    sourceHihat: "./samples/multicrash.wav",
+    sourceSnare: "./samples/esnare2.wav"
+  },
+  {
+    letter: "d",
+    sourceHihat: "./samples/trash.wav",
+    sourceSnare: "./samples/esnare.wav"
+  },
+  {
+    letter: "z",
+    sourceHihat: "./samples/tam1.wav",
+    sourceSnare: "./samples/eclosedhihat.wav"
+  },
+  {
+    letter: "x",
+    sourceHihat: "./samples/tam2.wav",
+    sourceSnare: "./samples/eopenhihat.wav"
+  },
+  {
+    letter: "c",
+    sourceHihat: "./samples/kick.wav",
+    sourceSnare: "./samples/ekick.wwav"
+  }
+];
 
 function App() {
   return (
     <div className="app flex-container">
       <div className="app-box">
         <div className="button-container">
-          <button className="button-look">q</button>
-          <button className="button-look">w</button>
-          <button className="button-look">e</button>
-          <button className="button-look">a</button>
-          <button className="button-look">s</button>
-          <button className="button-look">d</button>
-          <button className="button-look">z</button>
-          <button className="button-look">x</button>
-          <button className="button-look">c</button>
+          {samples.map(element => (
+            <DrumPadButton
+              key={element.letter}
+              letter={element.letter}
+              sourceHihat={element.sourceHihat}
+              sourceSnare={element.sourceSnare}
+            />
+          ))}
         </div>
         <div className="function-container"></div>
       </div>
