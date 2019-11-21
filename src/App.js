@@ -50,14 +50,7 @@ const samples = [
     sourceSnare: "./samples/ekick.wwav"
   }
 ];
-document.addEventListener("keydown", event => {
-  samples.forEach(element => {
-    if (element.letter === event.key) {
-      const audio = new Audio(element.sourceHihat);
-      audio.play();
-    }
-  });
-});
+
 function App() {
   return (
     <div className="app flex-container">
