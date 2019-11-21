@@ -1,9 +1,6 @@
 import React from "react";
-// import { Button } from "reactstrap";
 import "./App.css";
 import { useKeyPress } from "./useKeyPress";
-// import { ButtonPlay } from "./ButtonPlay";
-// import BankButton from "src";
 
 export function DrumPadButton(props) {
   const isPressed = useKeyPress(props.letter);
@@ -13,7 +10,7 @@ export function DrumPadButton(props) {
   };
 
   const playAudio = () => {
-    const audio = new Audio(props.sourceHihat);
+    const audio = new Audio(props.sourceAcoustic);
     audio.play();
   };
 

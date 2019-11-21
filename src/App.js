@@ -6,48 +6,48 @@ import { DrumPadButton } from "./DrumPadButton";
 const samples = [
   {
     letter: "q",
-    sourceHihat: "./samples/closedhihat.wav",
-    sourceSnare: "./samples/eclap1.wav"
+    sourceAcoustic: "./samples/closedhihat.wav",
+    sourceElectric: "./samples/eclap1.wav"
   },
   {
     letter: "w",
-    sourceHihat: "./samples/halfhihat.wav",
-    sourceSnare: "./samples/eclap2.wav"
+    sourceAcoustic: "./samples/halfhihat.wav",
+    sourceElectric: "./samples/eclap2.wav"
   },
   {
     letter: "e",
-    sourceHihat: "./samples/openhihat.wav",
-    sourceSnare: "./samples/eclap3.wav"
+    sourceAcoustic: "./samples/openhihat.wav",
+    sourceElectric: "./samples/eclap3.wav"
   },
   {
     letter: "a",
-    sourceHihat: "./samples/snare.wav",
-    sourceSnare: "./samples/esnare1.wav"
+    sourceAcoustic: "./samples/snare.wav",
+    sourceElectric: "./samples/esnare1.wav"
   },
   {
     letter: "s",
-    sourceHihat: "./samples/multicrash.wav",
-    sourceSnare: "./samples/esnare2.wav"
+    sourceAcoustic: "./samples/multicrash.wav",
+    sourceElectric: "./samples/esnare2.wav"
   },
   {
     letter: "d",
-    sourceHihat: "./samples/trash.wav",
-    sourceSnare: "./samples/esnare.wav"
+    sourceAcoustic: "./samples/trash.wav",
+    sourceElectric: "./samples/esnare.wav"
   },
   {
     letter: "z",
-    sourceHihat: "./samples/tam1.wav",
-    sourceSnare: "./samples/eclosedhihat.wav"
+    sourceAcoustic: "./samples/tam1.wav",
+    sourceElectric: "./samples/eclosedhihat.wav"
   },
   {
     letter: "x",
-    sourceHihat: "./samples/tam2.wav",
-    sourceSnare: "./samples/eopenhihat.wav"
+    sourceAcoustic: "./samples/tam2.wav",
+    sourceElectric: "./samples/eopenhihat.wav"
   },
   {
     letter: "c",
-    sourceHihat: "./samples/kick.wav",
-    sourceSnare: "./samples/ekick.wwav"
+    sourceAcoustic: "./samples/kick.wav",
+    sourceElectric: "./samples/ekick.wwav"
   }
 ];
 
@@ -60,8 +60,8 @@ function App() {
             <DrumPadButton
               key={element.letter}
               letter={element.letter}
-              sourceHihat={element.sourceHihat}
-              sourceSnare={element.sourceSnare}
+              sourceAcoustic={element.sourceAcoustic}
+              sourceElectric={element.sourceElectric}
             />
           ))}
         </div>
