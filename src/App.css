@@ -43,6 +43,8 @@
   border: solid brown;
   margin: auto;
   padding: 5px;
+  align-items: center;
+  justify-content: center;
 }
 .flex-container {
   display: flex;
@@ -80,13 +82,22 @@
   .function-container {
     height: 200px;
     width: 200px;
+    align-items: center;
+    justify-content: center;
   }
   .button-look {
     height: 60px;
     width: 60px;
   }
 }
-
+.display-box {
+  height: 60px;
+  width: 150px;
+  background-color: burlywood;
+  font-size: 30px;
+  text-align: center;
+  color: black;
+}
 .checkBox-look {
   height: 50px;
   width: 100px;
