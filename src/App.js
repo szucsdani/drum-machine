@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 //import logo from "./logo.svg";
 import "./App.css";
 import { DrumPadButton } from "./DrumPadButton";
+import { CheckBox } from "./CheckBox";
 
 const samples = [
   {
@@ -52,6 +53,17 @@ const samples = [
 ];
 
 function App() {
+  const [powerIsChecked, setPowerIsChecked] = useState(false);
+  const [bankIsChecked, setBankIsChecked] = useState(false);
+
+  const handlePowerCheck = () => {
+    setPowerIsChecked(!powerIsChecked);
+  };
+
+  const handleBankCheck = () => {
+    setBankIsChecked(!bankIsChecked);
+  };
+
   return (
     <div className="app flex-container">
       <div className="app-box">
@@ -62,12 +74,32 @@ function App() {
               letter={element.letter}
               sourceAcoustic={element.sourceAcoustic}
               sourceElectric={element.sourceElectric}
+              isDisabled={powerIsChecked === false}
             />
           ))}
         </div>
-        <div className="function-container"></div>
+        <div className="function-container">
+          <div className="checkBox-look">
+            <CheckBox
+              id="power-checkBox-id"
+              name="Power"
+              isChecked={powerIsChecked}
+              onCheck={handlePowerCheck}
+            />
+          </div>
+          <div className="checkBox-look">
+            <CheckBox
+              id="bank-checkBox-id"
+              name="Bank"
+              isChecked={bankIsChecked}
+              isDisabled={powerIsChecked === false}
+              onCheck={handleBankCheck}
+            />
+          </div>
+        </div>
       </div>
     </div>
   );
 }
+
 export default App;

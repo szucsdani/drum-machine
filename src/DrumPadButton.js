@@ -16,7 +16,11 @@ export function DrumPadButton(props) {
 
   return (
     <>
-      <button className="button-look" onClick={handleClick}>
+      <button
+        className="button-look"
+        onClick={handleClick}
+        disabled={props.isDisabled}
+      >
         {props.letter}
       </button>
       {isPressed && playAudio()}

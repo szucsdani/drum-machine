@@ -56,6 +56,11 @@
   background-color: gray;
   margin: auto;
 }
+
+.button-look:disabled {
+  color: black;
+}
+
 @media only screen and (max-width: 1000px) {
   .app-box {
     margin-top: 50px;
@@ -80,4 +85,12 @@
     height: 60px;
     width: 60px;
   }
+}
+.checkBox-container {
+}
+.checkBox-look {
+  height: 50px;
+  width: 100px;
+  margin: 20px;
+  background-color: burlywood;
 }
