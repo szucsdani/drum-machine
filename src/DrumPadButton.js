@@ -9,9 +9,15 @@ export function DrumPadButton(props) {
     playAudio();
   };
 
-  const playAudio = () => {
-    const audio = new Audio(props.sourceAcoustic);
-    audio.play();
+  const playAudio = checked => {
+    if (props.isChecked === false) {
+      const audio = new Audio(props.sourceAcoustic);
+      audio.play();
+    }
+    if (props.isChecked === true) {
+      const audio = new Audio(props.sourceElectric);
+      audio.play();
+    }
   };
 
   return (
@@ -20,6 +26,7 @@ export function DrumPadButton(props) {
         className="button-look"
         onClick={handleClick}
         disabled={props.isDisabled}
+        // checked={props.isChecked}
       >
         {props.letter}
       </button>

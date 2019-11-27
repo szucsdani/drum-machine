@@ -33,7 +33,7 @@ const samples = [
   {
     letter: "d",
     sourceAcoustic: "./samples/trash.wav",
-    sourceElectric: "./samples/esnare.wav"
+    sourceElectric: "./samples/esnare3.wav"
   },
   {
     letter: "z",
@@ -48,7 +48,7 @@ const samples = [
   {
     letter: "c",
     sourceAcoustic: "./samples/kick.wav",
-    sourceElectric: "./samples/ekick.wwav"
+    sourceElectric: "./samples/ekick.wav"
   }
 ];
 
@@ -75,27 +75,25 @@ function App() {
               sourceAcoustic={element.sourceAcoustic}
               sourceElectric={element.sourceElectric}
               isDisabled={powerIsChecked === false}
+              isChecked={bankIsChecked}
             />
           ))}
         </div>
         <div className="function-container">
-          <div className="checkBox-look">
-            <CheckBox
-              id="power-checkBox-id"
-              name="Power"
-              isChecked={powerIsChecked}
-              onCheck={handlePowerCheck}
-            />
-          </div>
-          <div className="checkBox-look">
-            <CheckBox
-              id="bank-checkBox-id"
-              name="Bank"
-              isChecked={bankIsChecked}
-              isDisabled={powerIsChecked === false}
-              onCheck={handleBankCheck}
-            />
-          </div>
+          <CheckBox
+            id="power-checkBox-id"
+            name="Power"
+            isChecked={powerIsChecked}
+            onCheck={handlePowerCheck}
+          />
+
+          <CheckBox
+            id="bank-checkBox-id"
+            name="Bank"
+            isChecked={bankIsChecked}
+            isDisabled={powerIsChecked === false}
+            onCheck={handleBankCheck}
+          />
         </div>
       </div>
     </div>

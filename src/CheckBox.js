@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { tsPropertySignature } from "@babel/types";
+import React from "react";
 
 /**
  * rename to checkbox.DONE
@@ -10,7 +9,7 @@ import { tsPropertySignature } from "@babel/types";
  */
 export const CheckBox = props => {
   return (
-    <div className="checkBox-container">
+    <div className="checkBox-look">
       <input
         type="checkbox"
         id={props.id}

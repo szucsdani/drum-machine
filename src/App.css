@@ -86,11 +86,11 @@
     width: 60px;
   }
 }
-.checkBox-container {
-}
+
 .checkBox-look {
   height: 50px;
   width: 100px;
   margin: 20px;
+  padding-top: 10px;
   background-color: burlywood;
 }
