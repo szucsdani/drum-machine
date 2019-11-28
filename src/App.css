@@ -94,7 +94,8 @@
   height: 60px;
   width: 150px;
   background-color: burlywood;
-  font-size: 30px;
+  font-size: 20px;
+  padding-top: 1px;
   text-align: center;
   color: black;
 }

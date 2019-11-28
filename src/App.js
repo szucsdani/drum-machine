@@ -3,6 +3,9 @@ import React, { useState } from "react";
 import "./App.css";
 import { DrumPadButton } from "./DrumPadButton";
 import { CheckBox } from "./CheckBox";
+import { DisplayBox } from "./DisplayBox";
+import { useKeyPress } from "./useKeyPress";
+import { tsPropertySignature } from "@babel/types";
 
 const samples = [
   {
@@ -73,7 +76,7 @@ const samples = [
 function App() {
   const [powerIsChecked, setPowerIsChecked] = useState(false);
   const [bankIsChecked, setBankIsChecked] = useState(false);
-  const [drumToDisplay, setDrumToDisplay] = useState(drumToDisplay);
+  const [displayBox, setDisplayBox] = useState("");
 
   const handlePowerCheck = () => {
     setPowerIsChecked(!powerIsChecked);
@@ -83,10 +86,9 @@ function App() {
     setBankIsChecked(!bankIsChecked);
   };
 
-  function DisplayBox(props, samples) {
-    setDrumToDisplay();
-  }
-
+  const handleDisplay = valtozo => {
+    setDisplayBox(valtozo);
+  };
   return (
     <div className="app flex-container">
       <div className="app-box">
@@ -98,7 +100,12 @@ function App() {
               sourceAcoustic={element.sourceAcoustic}
               sourceElectric={element.sourceElectric}
               isEnabled={powerIsChecked}
-              isChecked={bankIsChecked}
+              type={bankIsChecked ? "electric" : "acoustic"}
+              onPlay={() =>
+                handleDisplay(
+                  bankIsChecked ? element.electricName : element.acousticName
+                )
+              }
             />
           ))}
         </div>
@@ -111,7 +118,7 @@ function App() {
             onCheck={handlePowerCheck}
           />
           <div className="display-box">
-            <p> </p>
+            <DisplayBox drumName={displayBox} />
           </div>
           <CheckBox
             id="bank-checkBox-id"
