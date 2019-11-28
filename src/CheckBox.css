@@ -1,0 +1,9 @@
+.checkBox-label-look {
+  margin-top: 10px;
+}
+.checkBox-look {
+  height: 50px;
+  width: 100px;
+  padding: 5px;
+  background-color: burlywood;
+}

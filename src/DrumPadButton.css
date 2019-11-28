@@ -1,0 +1,17 @@
+.button-look {
+  height: 80px;
+  width: 80px;
+  border: 0.5px solid white;
+  background-color: gray;
+  margin: auto;
+}
+
+.button-look:disabled {
+  color: black;
+}
+@media only screen and (max-width: 500px) {
+  .button-look {
+    height: 60px;
+    width: 60px;
+  }
+}

@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import "./DrumPadButton.css";
 import { useKeyPress } from "./useKeyPress";
 
 export function DrumPadButton(props) {

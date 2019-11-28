@@ -1,11 +1,8 @@
 import React, { useState } from "react";
-//import logo from "./logo.svg";
 import "./App.css";
 import { DrumPadButton } from "./DrumPadButton";
 import { CheckBox } from "./CheckBox";
 import { DisplayBox } from "./DisplayBox";
-import { useKeyPress } from "./useKeyPress";
-import { tsPropertySignature } from "@babel/types";
 
 const samples = [
   {
@@ -90,7 +87,7 @@ function App() {
     setDisplayBox(valtozo);
   };
   return (
-    <div className="app flex-container">
+    <div className="app">
       <div className="app-box">
         <div className="button-container">
           {samples.map(element => (
@@ -117,8 +114,8 @@ function App() {
             isChecked={powerIsChecked}
             onCheck={handlePowerCheck}
           />
-          <div className="display-box">
-            <DisplayBox drumName={displayBox} />
+          <div>
+            <DisplayBox className="display-box" drumName={displayBox} />
           </div>
           <CheckBox
             id="bank-checkBox-id"

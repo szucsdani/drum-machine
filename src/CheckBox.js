@@ -1,12 +1,7 @@
 import React from "react";
 import "./App.css";
-/**
- * rename to checkbox.DONE
- * id = power / bank
- * name = Power / Bank
- * isChecked = true / false
- * onCheck = function
- */
+import "./CheckBox.css";
+
 export const CheckBox = props => {
   return (
     <div className="checkBox-look">
@@ -19,7 +14,9 @@ export const CheckBox = props => {
         disabled={props.isDisabled}
         onChange={props.onCheck}
       />
-      <label for={props.id}>{props.name}</label>
+      <label className="checkBox-label-look" for={props.id}>
+        {props.name}
+      </label>
     </div>
   );
 };
