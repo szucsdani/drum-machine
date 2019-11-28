@@ -3,6 +3,7 @@ import "./App.css";
 import { DrumPadButton } from "./DrumPadButton";
 import { CheckBox } from "./CheckBox";
 import { DisplayBox } from "./DisplayBox";
+import { VolumeSlider } from "./VolumeSlider";
 
 const samples = [
   {
@@ -74,6 +75,7 @@ function App() {
   const [powerIsChecked, setPowerIsChecked] = useState(false);
   const [bankIsChecked, setBankIsChecked] = useState(false);
   const [displayBox, setDisplayBox] = useState("");
+  const [volumeSlider, setVolumeSlider] = useState(30);
 
   const handlePowerCheck = () => {
     setPowerIsChecked(!powerIsChecked);
@@ -86,6 +88,10 @@ function App() {
   const handleDisplay = valtozo => {
     setDisplayBox(valtozo);
   };
+  const handleVolumeChange = soundVolume => {
+    setVolumeSlider();
+  };
+
   return (
     <div className="app">
       <div className="app-box">
@@ -116,6 +122,9 @@ function App() {
           />
           <div>
             <DisplayBox className="display-box" drumName={displayBox} />
+          </div>
+          <div>
+            <VolumeSlider onVolumeChange={() => handleVolumeChange()} />
           </div>
           <CheckBox
             id="bank-checkBox-id"
