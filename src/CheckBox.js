@@ -14,7 +14,7 @@ export const CheckBox = props => {
         disabled={props.isDisabled}
         onChange={props.onCheck}
       />
-      <label className="checkBox-label-look" for={props.id}>
+      <label className="checkBox-label-look" htmlFor={props.id}>
         {props.name}
       </label>
     </div>

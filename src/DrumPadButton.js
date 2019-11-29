@@ -17,6 +17,7 @@ export function DrumPadButton(props) {
     const audio = new Audio(
       props.type === "electric" ? props.sourceElectric : props.sourceAcoustic
     );
+    audio.volume = parseFloat(props.volume);
     audio.play();
   };
 

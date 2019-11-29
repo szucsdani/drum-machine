@@ -75,7 +75,7 @@ function App() {
   const [powerIsChecked, setPowerIsChecked] = useState(false);
   const [bankIsChecked, setBankIsChecked] = useState(false);
   const [displayBox, setDisplayBox] = useState("");
-  const [volumeSlider, setVolumeSlider] = useState(30);
+  const [volumeSlider, setVolumeSlider] = useState(0.5);
 
   const handlePowerCheck = () => {
     setPowerIsChecked(!powerIsChecked);
@@ -88,8 +88,8 @@ function App() {
   const handleDisplay = valtozo => {
     setDisplayBox(valtozo);
   };
-  const handleVolumeChange = soundVolume => {
-    setVolumeSlider();
+  const handleVolumeChange = value => {
+    setVolumeSlider(value);
   };
 
   return (
@@ -104,6 +104,7 @@ function App() {
               sourceElectric={element.sourceElectric}
               isEnabled={powerIsChecked}
               type={bankIsChecked ? "electric" : "acoustic"}
+              volume={volumeSlider}
               onPlay={() =>
                 handleDisplay(
                   bankIsChecked ? element.electricName : element.acousticName
@@ -124,7 +125,10 @@ function App() {
             <DisplayBox className="display-box" drumName={displayBox} />
           </div>
           <div>
-            <VolumeSlider onVolumeChange={() => handleVolumeChange()} />
+            <VolumeSlider
+              value={volumeSlider}
+              onVolumeChange={value => handleVolumeChange(value)}
+            />
           </div>
           <CheckBox
             id="bank-checkBox-id"
